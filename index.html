@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#e31837" />
+  <meta name="description" content="Pizza Hut Express en Amarket. Encuentra tu tienda y llega con Google Maps." />
+  <title>Pizza Hut Express | Amarket</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner container">
+      <div class="eyebrow">PIZZA HUT <span>EXPRESS</span></div>
+      <p class="hello">¡HOLA VECINO!</p>
+      <h1>TU PIZZA LISTA EN <strong>5 MIN</strong></h1>
+      <p class="lead">Pizza Hut Express ahora está en Amarket. Encuentra el punto más cercano y llega directo con Google Maps.</p>
+      <a class="btn btn--light" href="#ubicaciones">ENCUENTRA TU TIENDA</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="steps">
+      <div class="container">
+        <p class="kicker">ASÍ DE FÁCIL</p>
+        <h2>Tu Pizza Hut Express en 3 pasos</h2>
+        <div class="step-grid">
+          <article class="step"><div class="num">1</div><h3>Encuentra</h3><p>Elige tu Amarket más cercano.</p></article>
+          <article class="step"><div class="num">2</div><h3>Pide</h3><p>Selecciona tu pizza favorita.</p></article>
+          <article class="step"><div class="num">3</div><h3>Disfruta</h3><p>Tu pizza lista en 5 minutos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ubicaciones" class="locations container">
+      <p class="kicker kicker--red">NUESTRAS UBICACIONES</p>
+      <h2>Encuentra tu Pizza Hut Express</h2>
+      <p class="section-copy">Selecciona una tienda para verla en el mapa y abrir la ruta en Google Maps.</p>
+
+      <div class="store-grid" id="storeGrid"></div>
+
+      <section class="map-card">
+        <div class="map-copy">
+          <p class="kicker kicker--red">MAPA</p>
+          <h2 id="mapTitle">Amarket La Salle</h2>
+          <p id="mapAddress">2do anillo entre calle Libertad y calle Platanillo</p>
+          <a id="mapsButton" class="btn" target="_blank" rel="noopener">CÓMO LLEGAR EN GOOGLE MAPS</a>
+        </div>
+        <div class="map-wrap">
+          <iframe
+            id="mapFrame"
+            title="Mapa de ubicación"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+    </section>
+
+    <section class="campaign">
+      <div class="container campaign__inner">
+        <div>
+          <p class="kicker">PIZZA HUT EXPRESS</p>
+          <h2>CERCA. RÁPIDO. DELICIOSO.</h2>
+          <p>Tu pizza favorita lista en 5 minutos.</p>
+          <a class="btn btn--light" href="#ubicaciones">ENCUENTRA TU PIZZA HUT EXPRESS</a>
+        </div>
+        <img src="flyer.jpg" alt="Campaña Pizza Hut Express en Amarket" onerror="this.style.display='none'">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <strong>Pizza Hut Express Bolivia</strong>
+      <span>Campaña Amarket</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
