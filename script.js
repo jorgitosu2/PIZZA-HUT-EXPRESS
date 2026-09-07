@@ -1,23 +1,33 @@
 const stores = [
   {
     name: "Amarket La Salle",
-    address: "2do anillo entre calle Libertad y calle Platanillo, Santa Cruz de la Sierra, Bolivia"
+    address: "2do anillo entre calle Libertad y calle Platanillo, Santa Cruz de la Sierra, Bolivia",
+    lat: -17.7714323,
+    lng: -63.1854881
   },
   {
     name: "Amarket Velarde",
-    address: "Av. Velarde esquina calle Juan de Garay, Santa Cruz de la Sierra, Bolivia"
+    address: "Av. Velarde esquina calle Juan de Garay, Santa Cruz de la Sierra, Bolivia",
+    lat: -17.7962857,
+    lng: -63.1805653
   },
   {
     name: "Amarket Paragua",
-    address: "4to anillo casi esquina avenida Paragua, Santa Cruz de la Sierra, Bolivia"
+    address: "4to anillo casi esquina avenida Paragua, Santa Cruz de la Sierra, Bolivia",
+    lat: -17.764562,
+    lng: -63.1493811
   },
   {
     name: "Amarket Sirari",
-    address: "4to anillo esquina Av. Busch, barrio Sirari, Santa Cruz de la Sierra, Bolivia"
+    address: "4to anillo esquina Av. Busch, barrio Sirari, Santa Cruz de la Sierra, Bolivia",
+    lat: -17.7651496,
+    lng: -63.2048515
   },
   {
     name: "Amarket Isuto",
-    address: "3er anillo esquina calle Marcelo Terceros, Santa Cruz de la Sierra, Bolivia"
+    address: "3er anillo esquina calle Marcelo Terceros, Santa Cruz de la Sierra, Bolivia",
+    lat: -17.7537866,
+    lng: -63.1959577
   }
 ];
 
@@ -27,19 +37,22 @@ const mapTitle = document.getElementById("mapTitle");
 const mapAddress = document.getElementById("mapAddress");
 const mapsButton = document.getElementById("mapsButton");
 
-function mapsSearchUrl(address){
-  return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(address);
+// Rutas exactas al pin de cada tienda (coordenadas confirmadas en Google Maps),
+// no una búsqueda por texto: así el botón siempre lleva al lugar correcto
+// sin importar desde dónde se abra.
+function mapsDirectionsUrl(store){
+  return "https://www.google.com/maps/dir/?api=1&destination=" + store.lat + "," + store.lng;
 }
-function mapsEmbedUrl(address){
-  return "https://www.google.com/maps?q=" + encodeURIComponent(address) + "&output=embed";
+function mapsEmbedUrl(store){
+  return "https://www.google.com/maps?q=" + store.lat + "," + store.lng + "&z=17&output=embed";
 }
 
 function selectStore(index){
   const store = stores[index];
   mapTitle.textContent = store.name;
   mapAddress.textContent = store.address;
-  mapFrame.src = mapsEmbedUrl(store.address);
-  mapsButton.href = mapsSearchUrl(store.address);
+  mapFrame.src = mapsEmbedUrl(store);
+  mapsButton.href = mapsDirectionsUrl(store);
 
   document.querySelectorAll(".store").forEach((el,i)=>{
     el.classList.toggle("active", i===index);
