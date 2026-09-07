@@ -3,31 +3,36 @@ const stores = [
     name: "Amarket La Salle",
     address: "2do anillo entre calle Libertad y calle Platanillo, Santa Cruz de la Sierra, Bolivia",
     lat: -17.7714323,
-    lng: -63.1854881
+    lng: -63.1854881,
+    cid: "8663523850934259682"
   },
   {
     name: "Amarket Velarde",
     address: "Av. Velarde esquina calle Juan de Garay, Santa Cruz de la Sierra, Bolivia",
     lat: -17.7962857,
-    lng: -63.1805653
+    lng: -63.1805653,
+    cid: "13203689299411360303"
   },
   {
     name: "Amarket Paragua",
     address: "4to anillo casi esquina avenida Paragua, Santa Cruz de la Sierra, Bolivia",
     lat: -17.764562,
-    lng: -63.1493811
+    lng: -63.1493811,
+    cid: "6520490325231710196"
   },
   {
     name: "Amarket Sirari",
     address: "4to anillo esquina Av. Busch, barrio Sirari, Santa Cruz de la Sierra, Bolivia",
     lat: -17.7651496,
-    lng: -63.2048515
+    lng: -63.2048515,
+    cid: "2780685632752413716"
   },
   {
     name: "Amarket Isuto",
     address: "3er anillo esquina calle Marcelo Terceros, Santa Cruz de la Sierra, Bolivia",
     lat: -17.7537866,
-    lng: -63.1959577
+    lng: -63.1959577,
+    cid: "14767915558659220839"
   }
 ];
 
@@ -37,11 +42,13 @@ const mapTitle = document.getElementById("mapTitle");
 const mapAddress = document.getElementById("mapAddress");
 const mapsButton = document.getElementById("mapsButton");
 
-// Rutas exactas al pin de cada tienda (coordenadas confirmadas en Google Maps),
-// no una búsqueda por texto: así el botón siempre lleva al lugar correcto
-// sin importar desde dónde se abra.
+// Enlaza directo a la ficha exacta de cada tienda en Google Maps (por su CID,
+// el identificador único del local), no a una busqueda por texto ni a
+// coordenadas sueltas: asi el nombre y el pin son siempre los correctos,
+// sin importar desde donde se abra. Desde la ficha, el usuario toca
+// "Cómo llegar" y Maps traza la ruta desde su ubicación actual.
 function mapsDirectionsUrl(store){
-  return "https://www.google.com/maps/dir/?api=1&destination=" + store.lat + "," + store.lng;
+  return "https://www.google.com/maps?cid=" + store.cid;
 }
 function mapsEmbedUrl(store){
   return "https://www.google.com/maps?q=" + store.lat + "," + store.lng + "&z=17&output=embed";
