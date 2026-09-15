@@ -66,8 +66,7 @@ footer{background:#090909;color:#fff;padding:22px 0}
 }
 @media (max-width:640px){
   .container{width:min(100% - 22px,1120px)}
-  .hero{min-height:auto}
-  .hero__inner{padding:56px 0 64px}
+ .hero-cta{padding:13px 18px;font-size:14px}
   .step-grid,.store-grid{grid-template-columns:1fr}
   .steps,.locations{padding:54px 0}
   .store p{min-height:auto}
