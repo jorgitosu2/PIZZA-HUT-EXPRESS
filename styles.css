@@ -12,24 +12,18 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-ser
 img{max-width:100%;display:block}
 .container{width:min(1120px,calc(100% - 32px));margin:auto}
 .hero{
-  background:
-    radial-gradient(circle at 8% 20%, rgba(255,255,255,.18), transparent 18%),
-    radial-gradient(circle at 92% 18%, rgba(255,255,255,.12), transparent 20%),
-    var(--red);
-  color:white;
-  min-height:clamp(420px,42vw,600px);
-  display:grid;
-  place-items:center;
-  text-align:center;
+  position:relative;
+  background:var(--red);
   overflow:hidden;
 }
-.hero__inner{padding:72px 0}
-.logo-badge{display:inline-block;background:#fff;padding:14px 22px;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
-.brand-logo{display:block;width:clamp(220px,26vw,320px);height:auto}
-.hello{font-weight:800;letter-spacing:.08em;margin:18px 0 10px}
-.hero h1{font-family:Anton,Impact,sans-serif;font-size:clamp(52px,10vw,122px);line-height:.88;margin:0}
-.hero h1 strong{display:block;color:#fff5ea;text-shadow:0 4px 0 rgba(0,0,0,.12)}
-.lead{font-size:clamp(18px,2.4vw,25px);max-width:760px;margin:26px auto 32px;line-height:1.45}
+.hero-image{width:100%;height:auto}
+.hero-cta{
+  position:absolute;
+  left:50%;
+  bottom:6%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
   background:var(--red);color:#fff;text-decoration:none;
