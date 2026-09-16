@@ -37,11 +37,13 @@ img{max-width:100%;display:block}
 .steps{background:var(--cream);padding:72px 0}
 .kicker{font-weight:800;letter-spacing:.12em;font-size:13px;margin:0 0 8px}
 .kicker--red{color:var(--red)}
-.steps h2,.locations h2,.campaign h2{font-family:Anton,Impact,sans-serif;font-size:clamp(36px,5vw,64px);line-height:1;margin:0 0 22px}
+.steps h2,.locations h2,.campaign h2,.menu h2{font-family:Anton,Impact,sans-serif;font-size:clamp(36px,5vw,64px);line-height:1;margin:0 0 22px}
 .step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .step{background:white;padding:28px;border-radius:24px;box-shadow:var(--shadow)}
 .num{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--red);color:white;font-weight:800}
 .step h3{font-size:24px;margin:18px 0 8px}.step p{margin:0;color:var(--muted)}
+.menu{padding:78px 0}
+.menu-image{width:100%;border-radius:24px;box-shadow:var(--shadow)}
 .locations{padding:78px 0}
 .section-copy{color:var(--muted);font-size:18px;max-width:760px}
 .store-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:32px 0 40px}
